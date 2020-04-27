@@ -13,17 +13,14 @@ public class SceneAndURLLoader : MonoBehaviour
     }
 
 
-    public void SceneLoad(string sceneName)
+    public void SceneLoad()
 	{
 		//PauseMenu pauseMenu = (PauseMenu)FindObjectOfType(typeof(PauseMenu));
 		m_PauseMenu.MenuOff ();
-		SceneManager.LoadScene(sceneName);
+		SceneManager.LoadScene("PauseMenu");
 	}
 
 
-	public void LoadURL(string url)
-	{
-		Application.OpenURL(url);
-	}
+
 }
 
