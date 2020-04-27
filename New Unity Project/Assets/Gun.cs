@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    public float count = 0f;
-    public float range = 100f;
+    public float damage = 1f;
+    public float range = 5f;
 
     public Camera fpsCam;
  
@@ -19,7 +19,15 @@ public class Gun : MonoBehaviour
     void Shoot()
     {
         RaycastHit hit;
-        Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range);
+        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
+            Debug.Log(hit.transform.name);
+
+        Target tg = hit.transform.GetComponent<Target>();
+        if(tg != null)
+        {
+            tg.takeDamage(damage);
+        }
+
     }
 
 
