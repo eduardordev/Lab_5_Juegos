@@ -5,6 +5,7 @@ public class Target : MonoBehaviour
 {
     public float health = 1f;
     private Vector3 initPos;
+    public float count = 0f;
 
     private void Start()
     {
@@ -27,5 +28,6 @@ public class Target : MonoBehaviour
     void Die()
     {
         Destroy(gameObject);
+        count = count + 1;
     }
 }
