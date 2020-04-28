@@ -20,5 +20,11 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
+    void onPause()
+    {
+        if (Input.GetButtonDown("Cancel"))
+            SceneManager.LoadScene("PauseMenu");
+
+    }
 
 }

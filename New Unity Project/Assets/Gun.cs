@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
@@ -33,5 +32,6 @@ public class Gun : MonoBehaviour
 
     }
 
+    
 
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChangeColor : MonoBehaviour
 {
-    public float fuerza = 10;
+    public float fuerza = 4;
     // Update is called once per frame
     void Update()
     {
@@ -15,7 +15,7 @@ public class ChangeColor : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             //if((Physics.Raycast(transform.position, Vector3.down, out hitInfo, 3))
-            if (Physics.Raycast(ray, out hit, 100.0f))
+            if (Physics.Raycast(ray, out hit, 25.0f))
             {
                 //Debug.DrawRay(transform.position, Vector3.down * 3, Color.green);
                 if (hit.transform != null)
