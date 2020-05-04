@@ -7,10 +7,14 @@ public class Target : MonoBehaviour
     public float health = 1f;
     private Vector3 initPos;
     public float count = 0;
+    public AudioClip targetS;
+
+    AudioSource audioS;
 
     private void Start()
     {
         initPos = transform.localPosition;
+        audioS = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -28,7 +32,9 @@ public class Target : MonoBehaviour
 
     void Die()
     {
+
         Destroy(gameObject);
+        audioS.PlayOneShot(targetS);
         count++;
         Debug.Log(count);
     }

@@ -5,6 +5,16 @@ using UnityEngine;
 public class ChangeColor : MonoBehaviour
 {
     public float fuerza = 4;
+
+    public AudioClip cubeS;
+
+    AudioSource audioS;
+
+    private void Start()
+    {
+        audioS = GetComponent<AudioSource>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -45,6 +55,7 @@ public class ChangeColor : MonoBehaviour
     private void OnMouseEnter()
     {
         GetComponent<MeshRenderer>().material.color = Color.red;
+        audioS.PlayOneShot(cubeS);
     }
 
     private void OnMouseExit()
